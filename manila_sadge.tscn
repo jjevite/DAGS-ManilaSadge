@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://dl2p72j5e8s8h"]
+
+[ext_resource type="Texture2D" uid="uid://cg8vfum0rp5tb" path="res://Assets/WhiteSquarePixel.png" id="2_pkxsj"]
+[ext_resource type="PackedScene" uid="uid://bh21c7e33a617" path="res://Player.tscn" id="2_rge3q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wp4ar"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BG" type="Sprite2D" parent="."]
+modulate = Color(0.207843, 0.360784, 0.0705882, 1)
+position = Vector2(572, 322)
+scale = Vector2(6.6, 3.32)
+texture = ExtResource("2_pkxsj")
+
+[node name="WallHolder" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="WallHolder"]
+position = Vector2(585, 27)
+scale = Vector2(44.56, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallHolder/StaticBody2D"]
+shape = SubResource("RectangleShape2D_wp4ar")
+
+[node name="Sprite2D" type="Sprite2D" parent="WallHolder/StaticBody2D"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_pkxsj")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="WallHolder"]
+position = Vector2(585, 592)
+scale = Vector2(44.56, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallHolder/StaticBody2D2"]
+shape = SubResource("RectangleShape2D_wp4ar")
+
+[node name="Sprite2D" type="Sprite2D" parent="WallHolder/StaticBody2D2"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_pkxsj")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="WallHolder"]
+position = Vector2(120, 278)
+rotation = 1.5708
+scale = Vector2(24.32, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallHolder/StaticBody2D3"]
+shape = SubResource("RectangleShape2D_wp4ar")
+
+[node name="Sprite2D" type="Sprite2D" parent="WallHolder/StaticBody2D3"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_pkxsj")
+
+[node name="Player" parent="." instance=ExtResource("2_rge3q")]
+position = Vector2(510, 330)
