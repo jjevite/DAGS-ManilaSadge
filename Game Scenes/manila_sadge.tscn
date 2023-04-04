@@ -1,53 +1,61 @@
-[gd_scene load_steps=4 format=3 uid="uid://dl2p72j5e8s8h"]
+[gd_scene load_steps=4 format=3 uid="uid://i3ho36smw6bp"]
 
-[ext_resource type="Texture2D" uid="uid://cg8vfum0rp5tb" path="res://Assets/WhiteSquarePixel.png" id="2_pkxsj"]
-[ext_resource type="PackedScene" uid="uid://bh21c7e33a617" path="res://Player.tscn" id="2_rge3q"]
+[ext_resource type="Texture2D" uid="uid://cg8vfum0rp5tb" path="res://Assets/WhiteSquarePixel.png" id="1_2luix"]
+[ext_resource type="PackedScene" uid="uid://5wi1jsyjxava" path="res://Characters/Character Scenes/Player.tscn" id="2_eid10"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wp4ar"]
+size = Vector2(11.3569, 24.0004)
 
-[node name="Node2D" type="Node2D"]
+[node name="MainLevel" type="Node2D"]
+position = Vector2(1, 0)
 
 [node name="BG" type="Sprite2D" parent="."]
 modulate = Color(0.207843, 0.360784, 0.0705882, 1)
-position = Vector2(572, 322)
+position = Vector2(584, 347)
 scale = Vector2(6.6, 3.32)
-texture = ExtResource("2_pkxsj")
+texture = ExtResource("1_2luix")
 
 [node name="WallHolder" type="Node" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="WallHolder"]
-position = Vector2(585, 27)
+position = Vector2(583, 57)
 scale = Vector2(44.56, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallHolder/StaticBody2D"]
+position = Vector2(-0.13465, 46)
 shape = SubResource("RectangleShape2D_wp4ar")
 
 [node name="Sprite2D" type="Sprite2D" parent="WallHolder/StaticBody2D"]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_pkxsj")
+position = Vector2(-0.134644, 45)
+scale = Vector2(0.0504688, 0.1)
+texture = ExtResource("1_2luix")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="WallHolder"]
-position = Vector2(585, 592)
+position = Vector2(597, 624)
 scale = Vector2(44.56, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallHolder/StaticBody2D2"]
+position = Vector2(0.0448823, -51.75)
 shape = SubResource("RectangleShape2D_wp4ar")
 
 [node name="Sprite2D" type="Sprite2D" parent="WallHolder/StaticBody2D2"]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_pkxsj")
+position = Vector2(0.0224304, -52.75)
+scale = Vector2(0.0500698, 0.1)
+texture = ExtResource("1_2luix")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="WallHolder"]
-position = Vector2(120, 278)
+position = Vector2(64, 282)
 rotation = 1.5708
 scale = Vector2(24.32, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallHolder/StaticBody2D3"]
+position = Vector2(0.534528, -59)
 shape = SubResource("RectangleShape2D_wp4ar")
 
 [node name="Sprite2D" type="Sprite2D" parent="WallHolder/StaticBody2D3"]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_pkxsj")
+position = Vector2(0.53064, -57.301)
+scale = Vector2(0.0500151, 0.110575)
+texture = ExtResource("1_2luix")
 
-[node name="Player" parent="." instance=ExtResource("2_rge3q")]
+[node name="Player" parent="." instance=ExtResource("2_eid10")]
 position = Vector2(510, 330)
