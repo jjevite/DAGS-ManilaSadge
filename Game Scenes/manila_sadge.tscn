@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://i3ho36smw6bp"]
+[gd_scene load_steps=5 format=3 uid="uid://bo8ljeydrxanv"]
 
 [ext_resource type="Texture2D" uid="uid://cg8vfum0rp5tb" path="res://Assets/WhiteSquarePixel.png" id="1_2luix"]
-[ext_resource type="PackedScene" uid="uid://5wi1jsyjxava" path="res://Characters/Character Scenes/Player.tscn" id="2_eid10"]
+[ext_resource type="PackedScene" uid="uid://cin664k1clj21" path="res://Entity/Entity Scenes/Player.tscn" id="2_5t6dn"]
+[ext_resource type="PackedScene" uid="uid://byexwardqybgd" path="res://Entity/Entity Scenes/Shop_house.tscn" id="3_81h7h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wp4ar"]
 size = Vector2(11.3569, 24.0004)
@@ -57,5 +58,8 @@ position = Vector2(0.53064, -57.301)
 scale = Vector2(0.0500151, 0.110575)
 texture = ExtResource("1_2luix")
 
-[node name="Player" parent="." instance=ExtResource("2_eid10")]
-position = Vector2(510, 330)
+[node name="Player" parent="." instance=ExtResource("2_5t6dn")]
+position = Vector2(486, 386)
+
+[node name="Shop House" parent="." instance=ExtResource("3_81h7h")]
+position = Vector2(548, 334)
