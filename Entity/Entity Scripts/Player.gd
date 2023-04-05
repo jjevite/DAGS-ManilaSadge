@@ -9,17 +9,18 @@ extends CharacterBody2D
 func _ready():
 	update_animation_parameters(starting_direction)
 	
+
 func _physics_process(_delta):
 	#Get Input Direction
 	var input_direction = Vector2(
 		Input.get_action_strength("right") - Input.get_action_strength("left"),
 		Input.get_action_strength("down") - Input.get_action_strength("up")
 	)
-	
+
 	#Update Animation
 	update_animation_parameters(input_direction)
 	pick_new_state()
-	
+
 	#Update Velocity and Move
 	velocity = input_direction * move_speed
 	move_and_slide()
@@ -34,3 +35,12 @@ func pick_new_state():
 		state_machine.travel("Walk")
 	else:
 		state_machine.travel("Idle")
+
+
+# Move all the physics process here
+#func _on_mobile_joystick_use_move_vector(move_vector):
+#	update_animation_parameters(move_vector)
+#	pick_new_state()
+#
+#	velocity = move_vector * move_speed
+#	move_and_slide()
