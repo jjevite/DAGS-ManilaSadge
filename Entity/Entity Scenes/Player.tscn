@@ -1,7 +1,8 @@
-[gd_scene load_steps=29 format=3 uid="uid://cin664k1clj21"]
+[gd_scene load_steps=30 format=3 uid="uid://cin664k1clj21"]
 
 [ext_resource type="Script" path="res://Entity/Entity Scripts/Player.gd" id="1_gg144"]
 [ext_resource type="Texture2D" uid="uid://c6omci8b1sr6a" path="res://Assets/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet.png" id="2_i4oxw"]
+[ext_resource type="PackedScene" uid="uid://bs05myan3bmmb" path="res://HUD/MobileJoystick.tscn" id="2_v544s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kmwq1"]
 size = Vector2(12, 6)
@@ -230,12 +231,14 @@ transitions = ["Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_
 position = Vector2(1, 0)
 script = ExtResource("1_gg144")
 
+[node name="MobileJoystick" parent="." instance=ExtResource("2_v544s")]
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1, 0)
 texture = ExtResource("2_i4oxw")
 hframes = 4
 vframes = 4
-frame = 8
+frame = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 5)
@@ -255,3 +258,5 @@ parameters/Idle/blend_position = Vector2(0, 0)
 parameters/Walk/blend_position = Vector2(0, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="use_move_vector" from="MobileJoystick" to="." method="_on_mobile_joystick_use_move_vector"]

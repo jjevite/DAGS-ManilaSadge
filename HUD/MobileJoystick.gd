@@ -12,13 +12,13 @@ func _input(event):
 			joystick_active = true
 			$JoystickHandle.position = event.position
 			$JoystickHandle.visible = true
+			limit_the_inner_circle(event.position)
 			
 	if event is InputEventScreenTouch:
 		if event.pressed == false:
 			joystick_active = false
 			$JoystickHandle.visible = false
 			
-	limit_the_inner_circle(event.position)
 
 func _physics_process(delta):
 	if joystick_active:
