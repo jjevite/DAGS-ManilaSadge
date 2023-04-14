@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://b86gjv6i4x00v"]
+
+[ext_resource type="PackedScene" uid="uid://c750x3j20m3iu" path="res://Entity/EntityBase.tscn" id="1_ev3kr"]
+[ext_resource type="Script" path="res://JJ/Enemy.gd" id="2_bppx7"]
+[ext_resource type="Texture2D" uid="uid://cg8vfum0rp5tb" path="res://Assets/WhiteSquarePixel.png" id="3_qu6sh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tiwbo"]
+
+[node name="Enemy" instance=ExtResource("1_ev3kr")]
+script = ExtResource("2_bppx7")
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_qu6sh")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_tiwbo")
